@@ -4,7 +4,16 @@ var UsersModel = require('../model/UserModel')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+ UsersModel.find((err,doc)=>{
+      if(err){
+          console.log(err);
+      }else{
+          if(doc!==null){
+              console.log(JSON.stringify({"users":doc}))
+              res.send(JSON.stringify({"users":doc}))
+          }
+      }
+  })
 });
 router.get('/wuhongru',(req,res,next)=>{
   res.send("我是吴鸿儒");
