@@ -30,11 +30,21 @@ http://www.sakura1470.xyz:4000/users
 http://www.sakura1470.xyz:4000/users/login
 //两个query 一个username 一个password
 ```
+```
+//返回值
+_id 登陆成功
+error 用户不存在或者用户名或者密码错误
+```
 
 ```
 //注册
 http://www.sakura1470.xyz:4000/users/sign
 //两个query 一个username 一个password
+```
+```
+//返回值
+ok 成功
+error 用户已存在
 ```
 ```
 http://www.sakura1470.xyz:4000/charges
