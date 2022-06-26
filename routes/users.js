@@ -53,5 +53,30 @@ router.get('/sign',(req,res,next)=>{
   })
 })
 
+router.get('/deleteOne',(req,res,next)=>{
+  var u = req.query.username
+  var a = req.query.adminname
+  if(a==="xiaominwei"&&u!==null){
+    UsersModel.findOneAndDelete({username:u},(err,docs)=>{
+        if(err){
+          console.log(err)
+        }else{
+          if(docs===null){
+            res.send("not exist")
+          }else{
+            res.send(docs.username)
+          }
+        }
+    })
+  }else{
+    res.send("不合法")
+  }
+  
+})
+
+
+
+
+
 
 module.exports = router;
