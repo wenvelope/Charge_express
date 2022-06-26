@@ -47,6 +47,10 @@ ok 成功
 error 用户已存在
 ```
 ```
+//删除
+http://www.sakura1470.xyz:4000/users/deleteOne
+```
+```
 http://www.sakura1470.xyz:4000/charges
 //充电桩列表
 ```
@@ -81,6 +85,7 @@ http://www.sakura1470.xyz:4000/charges
     ]
 }
 ```
+
 
 
 
