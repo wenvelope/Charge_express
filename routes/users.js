@@ -1,6 +1,8 @@
+const e = require('express');
 var express = require('express');
 var router = express.Router();
 var UsersModel = require('../model/UserModel')
+var VipModel = require('../model/VipModel')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -51,6 +53,21 @@ router.get('/sign',(req,res,next)=>{
         
     }
   })
+})
+//vip 时长
+router.get('/vip/time',(req,res,next)=>{
+    var token = req.query.token
+    VipModel.findOne({token:token},(err,docs)=>{
+      if(err){
+        console.log(err)
+      }else{
+        if(docs===null){
+          res.send("null")
+        }else{
+          res.send(docs.time)
+        }
+      }
+    })
 })
 
 router.get('/deleteOne',(req,res,next)=>{
